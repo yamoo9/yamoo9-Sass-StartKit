@@ -1,0 +1,64 @@
+// * -------------------------------------------------------------------------
+// * [LAYOUT] 타이포그래피
+// * -------------------------------------------------------------------------
+// * - 버티컬 리듬(Vertical Rhythm)
+// * http://compass-style.org/reference/compass/typography/vertical_rhythm/
+// *
+// * ※ 타이포그래피 버티컬 리듬 모듈 사용 시에는 BASE 모듈에서
+// * Eric Meyer의 Reset v2를 선택해야 합니다.
+// * -------------------------------------------------------------------------
+@import "../../libs/vertical-rhythms/vertical-rhythms";
+
+// 타이포그래피 환경 $변수
+$base-font-size: 14px;
+$base-line-height: $base-font-size * 1.5;
+
+// 버티컬 리듬 단위(유닛) 설정 (기본 값: em)
+$rhythm-unit: px;
+
+// 베이스 폰트 사이즈 & 베이스라인 단축 $변수
+$bfz: $base-font-size;
+$blh: $base-line-height;
+
+
+
+// 본문 텍스트 기본 설정
+body {
+	// adjust-font-size-to 믹스인
+	// ----------------------------
+	// 설정
+	// font-size
+	// line-height
+	@include adjust-font-size-to($bfz);
+}
+
+p {
+	// leader 믹스인
+	// ----------------------------
+	// 설정
+	// margin-top
+	@include leader();
+	// trailer 믹스인
+	// ----------------------------
+	// 설정
+	// margin-bottom
+	@include trailer();
+}
+
+// 제목 설정
+// --------------------------------
+// $base-font-size 에 모듈러 스케일 적용
+h1 { @include adjust-font-size-to($bfz * 4);   }
+h2 { @include adjust-font-size-to($bfz * 3);   }
+h3 { @include adjust-font-size-to($bfz * 2);   }
+h4 { @include adjust-font-size-to($bfz * 1.5); }
+h5 { @include adjust-font-size-to($bfz * 1.2); }
+h6 { @include adjust-font-size-to($bfz);       }
+
+// headings 믹스인
+// ----------------------------
+// 설정
+// h1, h2, h3, h4, h5, h6
+@include headings() {
+	@include trailer();
+}

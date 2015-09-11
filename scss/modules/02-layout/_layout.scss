@@ -1,0 +1,104 @@
+// * -------------------------------------------------------------------------
+// * [LAYOUT] 레이아웃
+// * -------------------------------------------------------------------------
+// * - Susy2 활용
+// * http://susydocs.oddbird.net/en/latest/
+// *
+// * - Susy2 글로벌 설정
+// * http://susydocs.oddbird.net/en/latest/settings/#global-defaults
+// * -------------------------------------------------------------------------
+$susy: (
+
+	// Flow
+	// 문서의 읽는 방향 설정 (ltr, rtl)
+	flow: ltr,
+
+	// Math
+	// 유동형(Fluid), 고정형(Static) width 설정 (fluid, static)
+	// ※ 고정형으로 설정할 경우, column-width 값도 설정해줘야 함
+	math: fluid,
+
+	// Output
+	// 레이아웃 출력 모드 설정 (float, isolate)
+	// ※ 현재 Susy 버전은 Float을 메인으로 출력하지만, 향후 Flexbox 등 다양한 방법 지원 예정
+	output: float,
+
+	// Gutter Position
+	// 거터의 방향 설정 (after, before, split, inside, inside-static)
+	// ※ inside 설정은 Padding으로 처리됨
+	gutter-position: after,
+
+	// Container
+	// 컨테이너 요소의 최대 폭 값을 설정 (auto, <length>)
+	container: auto,
+
+	// Container Position
+	// 상위 요소를 기준으로 하는 컨테이너 요소의 레이아웃 정렬 (center, left, right, <length> * 2)
+	container-position: center,
+
+	// Columns
+	// 컬럼의 총 개수 설정 (4, <number>, <list>)
+	columns: 4,
+
+	// Gutters
+	// 거터의 폭 설정 (1/4, <gutter-width>/<column-width>)
+	gutters: .25,
+
+	// Column Width
+	// 컬럼의 폭 설정 (false, null, <length>)
+	column-width: false,
+
+	// Global Box Sizing
+	// 전역 CSS3 박스 사이즈 설정 (content-box, border-box)
+	global-box-sizing: content-box,
+
+	// Last Flow
+	// 레이아웃 내의 마지막 요소 float 방향 설정 (to, from)
+	last-flow: to,
+
+	// Debug
+	// 레이아웃 디버깅 환경 설정
+	debug: (
+
+		// 그리드 이미지: (hide, show, show-columns, show-baseline)
+		// ※ 그리드 이미지를 보여줌, 만약 Compass vertical rhythms을 사용할 경우,
+		// $base-line-height 설정 값에 따라 베이스라인을 그려줌.
+		image: hide,
+
+		// 그리드 컬럼 색상: (rgba(#66f, .25), <color>)
+		color: rgba(#66f, .25),
+
+		// 그리드 모드: (background, overlay)
+		// ※ overlay 설정일 경우, 컨테이너 요소의 ::before 요소를 사용하여 오버레이 함.
+		output: background,
+
+		// 그리드 토글 버튼 방향: (top right, <direction>)
+		// ※ overlay 설정에서만 사용 가능.
+		toggle: top right
+	),
+
+	// Use Custom
+	// 사용자 정의 설정
+	use-custom: (
+
+		// 사용자 정의 background-image() 믹스인 사용 유무: (true, false)
+		// ※ Compass, Bourbon의 믹스인을 사용할 경우, true로 설정
+		background-image: true,
+
+		// 사용자 정의 background-size(), background-origin(), background-clip() 사용 유무 (false, true)
+		background-options: false,
+
+		// 사용자 정의 box-sizing() 사용 유무: (true, false)
+		// ※ Compass, Bourbon의 믹스인을 사용할 경우, true로 설정
+		box-sizing: true,
+
+		// 사용자 정의 clearfix() 사용 유무: (false, true)
+		clearfix: false,
+
+		// 사용자 정의 rem() 사용 유무: (true, false)
+		rem: true,
+
+		// 사용자 정의 breakpoint() 사용 유무: (true, false)
+		breakpoint: true,
+	)
+);susy
